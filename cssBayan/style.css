@@ -5,28 +5,28 @@ body{
     background-color: #c5fae6;
 }
 .container{
-    max-width: 910px;
-    margin: 10px auto;
-    padding: 0 5px;
+    max-width: 60em;
+    margin: 0em auto;
+    padding: 0 .5em;
 }
 .cssbayan__title{
-    font-size: 36px;
+    font-size: 2em;
     font-weight: 700;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 1.25em;
     color: #030172;
-    text-shadow: 0px 0px 5px;
-    letter-spacing: .1rem;
-    margin-bottom: 20px;
+    text-shadow: 0em 0em .3em;
+    letter-spacing: .1em;
+    margin-bottom: 1.25em;
 }
 
 .accordeon input, .acc__content{
     display: none;
+    opacity: 0;
 }
 .accordeon :checked +  .accordeon__header{
     background-color: #a5f5d6;
-    border-radius: 5px;
-
+    border-radius: .3em;
 }
 .accordeon :checked + .accordeon__header::after{
     content: '';
@@ -34,81 +34,83 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;
-    display: block;
-    right: 5px;
+    right: .3em;
     transform: rotate(-90deg);
     cursor: pointer;
-    transition: .6s;
-}
-.accordeon :checked ~ .acc__content{
-    display: block;
-
+    transition: .5s all ease-in-out;
 }
 .accordeon__header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-.accordeon__header{
-    width: 100%;
-    padding: 30px 25px 30px 45px;
-    font-size: 24px;
+    padding: 1.3em 0em 1.3em 1.8em;
+    font-size: 1.5em;
     font-weight: 600;
     text-transform: uppercase;
     color: rgb(236, 17, 17);
-    border-bottom: 2px solid #645151;
+    border-bottom: .1em solid #645151;
     cursor: pointer;
     position: relative;
-    transition: .5s;
+    transition: .5s all ease-in-out;
 }
 .accordeon__header:hover{
     color: rgb(236, 159, 17);
+    text-shadow: 0em 0em .1em #ffffff;
     transform: scale(1.01);
-    border-bottom: 2px solid rgb(100, 81, 81, 0.1);
-    transition: .5s;
+    border-bottom: .1em solid rgb(100, 81, 81, 0.1);
+    transition: .5s all ease-in-out;
 }
 .acc__content{
-    max-width: 400px;
-    max-height: 400px;
+    max-width: 25em;
+    max-height: 0em;
     object-fit: cover;
     margin: 0 auto;
-    border-radius: 4px;
-    margin-top: 1px;
-
+    border-radius: .2em;
+    margin-top: .2em;
+    box-shadow: 0em 0em 1em .1em #fff;
+    transition: .5s all ease-out;
 }
 .accordeon__header::after{
     content: '';
-    width: 20px;
-    height: 20px;
+    width: 1em;
+    height: 1em;
     background-image: url(images/icon-open.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     position: absolute;
-    display: none;
-    right: 5px;
+    right: .3em;
     cursor: pointer;
     transform: rotate(90deg);
-    transition: .5s all ease-in-out;
+    transition: .8s all ease-in-out;
     opacity: 0;
 }
+
 .accordeon__header:hover::after {
-    content: '';
     transition: .5s all ease-in-out;
-    width: 20px;
-    height: 20px;
+    width: 1em;
+    height: 1em;
     background-image: url(images/icon-open.svg);
     background-repeat: no-repeat;
     background-position: center;
-    display: block;
     cursor: pointer;
     transform: rotate(90deg);
+    opacity: .8;
+}
+
+.accordeon :checked ~ .acc__content{
+    display: block;
+    opacity: 1;
+    max-height: 25em;
+}
+
+
+/* .accordeon:hover img{
+    display: block;
     opacity: 1;
 
-
-
 }
-.container:hover  .accordeon__header::after{
-    display: block;
+ */
 
-}
+
+
