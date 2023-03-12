@@ -1,15 +1,20 @@
-*{
+* {
     font-family: sans-serif;
 }
-body{
+
+body {
     background-color: #c5fae6;
 }
-.container{
+.acordeon__header__text{
+    display: block;
+}
+.container {
     max-width: 60em;
     margin: 0em auto;
     padding: 0 .5em;
 }
-.cssbayan__title{
+
+.cssbayan__title {
     font-size: 2em;
     font-weight: 700;
     text-align: center;
@@ -20,26 +25,7 @@ body{
     margin-bottom: 1.25em;
 }
 
-.accordeon input, .acc__content{
-    display: none;
-    opacity: 0;
-}
-.accordeon :checked +  .accordeon__header{
-    background-color: #a5f5d6;
-    border-radius: .3em;
-}
-.accordeon :checked + .accordeon__header::after{
-    content: '';
-    background-image: url(images/icon-open.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    position: absolute;
-    right: .3em;
-    transform: rotate(-90deg);
-    cursor: pointer;
-    transition: .5s all ease-in-out;
-}
-.accordeon__header{
+.accordeon__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -53,24 +39,33 @@ body{
     position: relative;
     transition: .5s all ease-in-out;
 }
-.accordeon__header:hover{
+
+.accordeon__header:hover {
     color: rgb(236, 159, 17);
     text-shadow: 0em 0em .1em #ffffff;
     transform: scale(1.01);
     border-bottom: .1em solid rgb(100, 81, 81, 0.1);
     transition: .5s all ease-in-out;
 }
-.acc__content{
+
+.accordeon input,
+.acc__content {
+    display: none;
+    opacity: 0;
+}
+
+.acc__content {
     max-width: 25em;
     max-height: 0em;
     object-fit: cover;
     margin: 0 auto;
     border-radius: .2em;
     margin-top: .2em;
-    box-shadow: 0em 0em 1em .1em #fff;
-    transition: .5s all ease-out;
+    box-shadow: 0em 0em 1em .2em #fff;
+    transition: all .7s ease-out;
 }
-.accordeon__header::after{
+
+.accordeon__header::after {
     content: '';
     width: 1em;
     height: 1em;
@@ -87,30 +82,99 @@ body{
 }
 
 .accordeon__header:hover::after {
-    transition: .5s all ease-in-out;
-    width: 1em;
-    height: 1em;
-    background-image: url(images/icon-open.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    cursor: pointer;
-    transform: rotate(90deg);
     opacity: .8;
 }
 
-.accordeon :checked ~ .acc__content{
+.accordeon :checked+.accordeon__header {
+    background-color: #a5f5d6;
+    border-radius: .3em;
+}
+
+.accordeon :checked+.accordeon__header::after {
+    transform: rotate(-90deg);
+}
+
+.accordeon :checked~.acc__content {
     display: block;
     opacity: 1;
     max-height: 25em;
+    transition: .7s;
 }
 
-
-/* .accordeon:hover img{
+.accordeon:hover img {
     display: block;
     opacity: 1;
+}
+
+
+@media (max-width: 1000px) {
+
+
+    .accordeon__header {
+        line-height: 1.3em;
+        padding: 1em 0em 1em 1.3em;
+        font-size: 1.3em;
+    }
+
+    .accordeon__header::after {
+        right: .7em;
+        width: 0.8em;
+        height: 0.8em;
+    }
+}
+
+@media (max-width: 840px) {
+    .accordeon__header {
+        padding: 0.8em 0em 0.8em 0.8em;
+    }
+    .acordeon__header__text{
+        max-width: 36em;
+    }
+    .cssbayan__title {
+        font-size: 1.8em;
+        margin-bottom: 0.8em;
+    }
+    .acc__content {
+        max-width: 19em;
+    }
+}
+
+@media (max-width: 740px) {
+    .accordeon__header {
+        line-height: 1.2em;
+        font-size: 1.1em;
+    }
+
+    .cssbayan__title {
+        font-size: 1.6em;
+    }
 
 }
- */
+
+@media (max-width: 630px) {
+    .cssbayan__title {
+        font-size: 1.4em;
+    }
+
+    .accordeon__header {
+        padding: 0.6em 0em 0.6em 0.6em;
+    }
+
+    .acc__content {
+        max-width: 17em;
+    }
+    .acordeon__header__text{
+        max-width: 29em;
+    }
 
 
+}
 
+@media (max-width: 560px) {
+    .cssbayan__title {
+        font-size: 1.3em;
+    }
+    .acc__content {
+        max-width: 15em;
+    }
+}
